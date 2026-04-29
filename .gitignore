@@ -1,0 +1,15 @@
+# 系統檔案
+.DS_Store
+
+# 源檔案目錄（提案單 .pages、ENEX、截圖）— 內含敏感資訊
+file/
+
+# 內部規劃稿 — 不對外公開
+*.md
+!README.md
+
+# 已合併到 index.html 的獨立檔
+architecture-principles.html
+
+# Vercel
+.vercel
