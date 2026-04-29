@@ -369,19 +369,86 @@
 
               <!-- 主題 B：UX -->
               <div class="bg-white rounded-lg p-4 border border-emerald-100 mb-3">
-                <p class="text-xs font-semibold text-tfda-green mb-2.5">主題 B · 操作流程改善（兩階段）</p>
+                <p class="text-xs font-semibold text-tfda-green mb-2.5">主題 B · 操作流程改善（三階段）</p>
 
-                <!-- 短期 → 長期 升級脈絡 -->
-                <div class="grid grid-cols-2 gap-2 mb-3">
+                <!-- 短期 → 中期 → 長期 升級脈絡 -->
+                <div class="grid grid-cols-3 gap-2 mb-3">
                   <!-- 短期 -->
                   <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5">
                     <p class="text-[10px] font-semibold text-emerald-700 mb-1.5">📋 短期（本次改版）</p>
                     <p class="text-[10px] text-tfda-navy/70 leading-relaxed">Excel／CSV 拖放<br>+ 即時 schema 驗證</p>
                   </div>
+                  <!-- 中期：AI 輔助 -->
+                  <div class="bg-violet-50 border border-violet-200 rounded p-2.5">
+                    <p class="text-[10px] font-semibold text-violet-700 mb-1.5">🤖 中期（AI 輔助）</p>
+                    <p class="text-[10px] text-tfda-navy/70 leading-relaxed">貼成分文字／丟配方 PDF<br>LLM 解析 + 字典對應</p>
+                  </div>
                   <!-- 長期 -->
                   <div class="bg-cyan-50 border border-cyan-200 rounded p-2.5">
                     <p class="text-[10px] font-semibold text-tfda-teal-dark mb-1.5">🔌 長期（API-Ready）</p>
                     <p class="text-[10px] text-tfda-navy/70 leading-relaxed">業者 ERP 直接 push<br>淘汰 Excel 中介</p>
+                  </div>
+                </div>
+
+                <!-- 中期細節：AI 輔助輸入 4 步流程 -->
+                <div class="bg-violet-50/50 border border-violet-200 rounded-lg p-3 mb-3">
+                  <p class="text-[11px] font-semibold text-violet-700 mb-2 flex items-center gap-1">
+                    <span>🤖</span><span>中期 · AI 輔助輸入流程（針對無 ERP 中小業者）</span>
+                  </p>
+
+                  <div class="space-y-1.5 mb-2.5">
+                    <div class="bg-white rounded p-2 border border-violet-100">
+                      <div class="flex items-start gap-2">
+                        <span class="text-[10px] font-bold text-violet-700 flex-shrink-0 bg-violet-100 px-1.5 py-0.5 rounded">Step 1</span>
+                        <div class="flex-1">
+                          <p class="text-[11px] text-tfda-navy font-semibold">貼上 INCI 文字／上傳配方 PDF</p>
+                          <p class="text-[10px] text-tfda-navy/60 leading-relaxed">OCR 擷取文字層 → LLM 斷詞、同義詞收斂、對應 TFDA 字典（兩段技術邊界明確）</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white rounded p-2 border border-violet-100">
+                      <div class="flex items-start gap-2">
+                        <span class="text-[10px] font-bold text-violet-700 flex-shrink-0 bg-violet-100 px-1.5 py-0.5 rounded">Step 2</span>
+                        <div class="flex-1">
+                          <p class="text-[11px] text-tfda-navy font-semibold">三級信心分數預覽（可量化、可審計）</p>
+                          <div class="flex flex-wrap gap-1 mt-1">
+                            <span class="bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded text-[9px]">✓ ≥0.95 自動採用</span>
+                            <span class="bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded text-[9px]">⚠ 0.80–0.95 需確認</span>
+                            <span class="bg-red-100 text-red-700 px-1.5 py-0.5 rounded text-[9px]">✗ &lt;0.80 拒絕</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white rounded p-2 border border-violet-100">
+                      <div class="flex items-start gap-2">
+                        <span class="text-[10px] font-bold text-violet-700 flex-shrink-0 bg-violet-100 px-1.5 py-0.5 rounded">Step 3</span>
+                        <div class="flex-1">
+                          <p class="text-[11px] text-tfda-navy font-semibold">一鍵匯入登錄欄位</p>
+                          <p class="text-[10px] text-tfda-navy/60 leading-relaxed">自動填入 canonical INCI 名稱、用途類別，連動觸發法定警語（→ 主題 C）</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-white rounded p-2 border border-violet-100">
+                      <div class="flex items-start gap-2">
+                        <span class="text-[10px] font-bold text-violet-700 flex-shrink-0 bg-violet-100 px-1.5 py-0.5 rounded">Step 4</span>
+                        <div class="flex-1">
+                          <p class="text-[11px] text-tfda-navy font-semibold">人工複核低信心項</p>
+                          <p class="text-[10px] text-tfda-navy/60 leading-relaxed">處理萃取物拉丁學名、業界冷僻別名等 LLM 沒把握項（WATER／AQUA 同義詞由主題 A canonical aliases 自動處理，不再人工）</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 配方機密性 -->
+                  <div class="bg-white rounded p-2 border border-violet-300 mb-1.5">
+                    <p class="text-[10px] font-semibold text-violet-700 mb-1">🔒 配方機密處理（業者最敏感點）</p>
+                    <p class="text-[10px] text-tfda-navy/70 leading-relaxed">採<span class="font-semibold">地端部署或私有雲</span>；僅送成分名稱字串給 LLM，<span class="font-semibold text-red-600">不送配方比例</span>，避免商業機密外流。</p>
+                  </div>
+
+                  <!-- 技術基礎 -->
+                  <div class="bg-white rounded p-2 border border-violet-200">
+                    <p class="text-[10px] font-semibold text-violet-700 mb-1">🛠 技術基礎</p>
+                    <p class="text-[10px] text-tfda-navy/70 leading-relaxed">LLM 微調 + INCI 資料庫（PCPC）+ TFDA 法規庫。業界已有 <span class="font-semibold">INCIDecoder</span>、<span class="font-semibold">Cosmile</span> 等第三方反向辨識工具，反映「AI 解 INCI」的需求成熟、技術路徑可行。</p>
                   </div>
                 </div>
 
@@ -405,6 +472,7 @@
                   <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>Excel／CSV <span class="font-semibold">拖放匯入 + 即時 schema 驗證</span>（升級現行離線編輯模式）</li>
                   <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>模糊搜尋（中英 + INCI + CAS + 別名）</li>
                   <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>常用配方範本一鍵套用</li>
+                  <li class="flex gap-2"><span class="text-violet-600 flex-shrink-0">★</span><span class="text-violet-700"><span class="font-semibold">AI 輔助輸入：</span>貼成分文字／丟配方 PDF → LLM 解析、信心分數標示、字典對應；地端部署、不送配方比例</span></li>
                   <li class="flex gap-2"><span class="text-tfda-teal-dark flex-shrink-0">→</span><span class="text-tfda-teal-dark"><span class="font-semibold">API-Ready：</span>業者 ERP 直接 push 成分資料，雙向同步、淘汰 Excel 中介（對應 <a href="#section-d" class="underline font-semibold">D-2 schema</a> + <a href="#section-d" class="underline font-semibold">D-8 OpenAPI</a>）</span></li>
                 </ul>
               </div>
@@ -702,11 +770,98 @@
             </div>
           </div>
 
+          <!-- 擴充改善：登錄編號修改時機 + 變更分級登錄（回應公會徵詢意見 Q6 / Q5） -->
+          <div class="mt-6 grid lg:grid-cols-2 gap-4">
+
+            <!-- 子主題 A：登錄編號可改時機（Q6） -->
+            <div class="bg-emerald-50/40 border border-emerald-200 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge bg-tfda-teal text-white text-[10px] px-2 py-0.5">擴充 A</span>
+                <p class="text-sm font-semibold text-tfda-navy">登錄編號可改時機（draft / submitted 雙態）</p>
+              </div>
+              <p class="text-xs text-tfda-navy/60 mb-3 leading-relaxed">
+                現行：「新增後不得再修改」→ 業者打錯編號就只能整筆刪除重建，草稿欄位全失。
+              </p>
+
+              <!-- BEFORE / AFTER 狀態圖 -->
+              <div class="bg-white rounded-lg p-3 border border-emerald-100 mb-2.5">
+                <div class="grid grid-cols-2 gap-2 text-[11px]">
+                  <div class="bg-red-50 border border-red-200 rounded p-2">
+                    <p class="text-[10px] font-semibold text-red-600 mb-1">❌ 現行</p>
+                    <p class="text-tfda-navy/70 leading-relaxed">新增 → <span class="font-mono bg-white px-1 rounded">儲存</span> → 編號鎖定（仍是草稿狀態）</p>
+                  </div>
+                  <div class="bg-emerald-50 border border-emerald-200 rounded p-2">
+                    <p class="text-[10px] font-semibold text-emerald-700 mb-1">✓ 建議</p>
+                    <p class="text-tfda-navy/70 leading-relaxed">新增 → <span class="font-mono bg-white px-1 rounded">draft</span>（可改）→ <span class="font-mono bg-white px-1 rounded">submitted</span>（鎖定）</p>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="text-xs text-tfda-navy/70 space-y-1 leading-relaxed">
+                <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>儲存後狀態為 <span class="font-mono">draft</span>，所有欄位（含登錄編號）皆可改</li>
+                <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>正式送出後狀態轉為 <span class="font-mono">submitted</span>，TFDA 端發出永久識別碼鎖定</li>
+                <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>對應 <a href="#section-d" class="text-tfda-teal underline">D-1 永久 ID</a>：永久 ID 由 TFDA 在 submitted 時刻發出，與業者端 draft 編號為兩層級</li>
+              </ul>
+            </div>
+
+            <!-- 子主題 B：變更分級登錄（Q5） -->
+            <div class="bg-amber-50/40 border border-amber-200 rounded-xl p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge bg-tfda-orange text-white text-[10px] px-2 py-0.5">擴充 B</span>
+                <p class="text-sm font-semibold text-tfda-navy">成分變更分級登錄（minor / major）</p>
+              </div>
+              <p class="text-xs text-tfda-navy/60 mb-3 leading-relaxed">
+                現行：成分一動就視為「新案重新登錄」，業者重繳費、重走流程。建議以「<span class="font-semibold">是否影響原始安全評估與警語結論</span>」為分級判定基準。
+              </p>
+
+              <!-- 分級表 -->
+              <div class="bg-white rounded-lg p-3 border border-amber-100 mb-2.5 text-[11px]">
+                <div class="space-y-2">
+                  <div class="bg-emerald-50 border border-emerald-200 rounded p-2">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-semibold text-emerald-700">Minor change · 變更登錄</span>
+                      <span class="text-[9px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded">基本費</span>
+                    </div>
+                    <p class="text-[10px] text-tfda-navy/70 leading-relaxed">香料配方微調、移除非限制成分、添加量低於閾值（不影響安全評估）</p>
+                  </div>
+                  <div class="bg-red-50 border border-red-200 rounded p-2">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-semibold text-red-700">Major change · 重新登錄</span>
+                      <span class="text-[9px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded">新案費</span>
+                    </div>
+                    <p class="text-[10px] text-tfda-navy/70 leading-relaxed">新增／移除限制成分、改變產品劑型、影響安全評估或警語</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 分級判定原則 -->
+              <div class="bg-white rounded-lg p-2 border border-amber-100 mb-2.5">
+                <p class="text-[10px] font-semibold text-amber-700 mb-1">📐 分級判定原則</p>
+                <p class="text-[10px] text-tfda-navy/70 leading-relaxed">
+                  分級依據是「<span class="font-semibold">是否影響原始安全評估與使用注意事項</span>」：
+                  PIF 安全評估與警語結論不變 → minor；需重做安全評估或新增/刪除警語 → major。
+                  歐盟 CPNP（Reg. 1223/2009 Art. 13）採類似精神：當 frame formula 不再對應實際配方、成分濃度顯著變化、加減有害成分時，業者應主動更新通知。
+                </p>
+              </div>
+
+              <ul class="text-xs text-tfda-navy/70 space-y-1 leading-relaxed">
+                <li class="flex gap-2"><span class="text-amber-600 flex-shrink-0">+</span>登錄辦法第 5 條「變更登錄」現行已存在，本建議僅擴充其適用範圍至成分微變更</li>
+                <li class="flex gap-2"><span class="text-amber-600 flex-shrink-0">+</span>須由 TFDA 公告「變更分級判定基準」（成分清單 + 含量閾值）</li>
+                <li class="flex gap-2"><span class="text-amber-600 flex-shrink-0">+</span>對應 <a href="#section-d" class="text-tfda-teal underline">D-5 事件驅動</a>：minor／major 觸發不同事件流</li>
+              </ul>
+            </div>
+
+          </div>
+
           <!-- 法源與架構支撐 -->
           <div class="mt-6 bg-tfda-navy/5 rounded-lg p-3 border-l-4 border-tfda-navy">
             <p class="text-xs text-tfda-navy/70 leading-relaxed">
+              <span class="font-semibold">法源：</span>
+              登錄辦法第 4 條（應登錄事項）／第 5 條（登錄事項變更者，應辦理變更登錄）。<br>
               <span class="font-semibold">架構支撐：</span>對應本提案 D 章
-              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-2 欄位 Schema</a>（必填／選填屬性、長度／格式驗證規則 schema 化）。
+              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-1 永久 ID</a>（永久識別碼於 submitted 時刻發出）／
+              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-2 欄位 Schema</a>（必填／選填屬性 schema 化）／
+              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-5 事件驅動</a>（draft→submitted、minor／major 變更為不同事件）。
             </p>
           </div>
         </article>
@@ -3045,6 +3200,67 @@
               業者得授權第三方系統（如 ERP）以 access token 代理操作，<br>
               授權範圍（scope）、效期（expiry）、撤銷機制應符合 RFC 6749 / RFC 8252 規範。」
             </p>
+          </div>
+
+          <!-- 附錄：密碼政策現代化（回應公會徵詢意見 Q8） -->
+          <div class="mt-6 bg-violet-50/40 rounded-xl p-5 border border-violet-200">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge bg-violet-600 text-white text-[10px] px-2 py-0.5">附錄</span>
+              <p class="text-sm font-semibold text-tfda-navy">密碼政策現代化：取消 90 天強制變更</p>
+            </div>
+
+            <p class="text-xs text-tfda-navy/70 mb-4 leading-relaxed">
+              現行 GSP 單一登入即便已採 OIDC，仍要求每 3 個月強制變更密碼。此政策已被國際資安標準淘汰——
+              強制定期變更會導致使用者採用「弱化版本」（password1 → password2 → password3），<span class="font-semibold">反而降低安全性</span>。
+              既然 GSP 走 OIDC，即應採用現代 IdP 政策，與 1990 年代密碼輪替思維脫鉤。
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-3 mb-3">
+              <!-- 現行 -->
+              <div class="bg-white rounded-lg p-3 border border-red-200">
+                <p class="text-[11px] font-semibold text-red-600 mb-2">❌ 現行（已過時）</p>
+                <ul class="text-[11px] text-tfda-navy/70 space-y-1 leading-relaxed">
+                  <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">−</span>每 90 天強制變更密碼</li>
+                  <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">−</span>使用者採弱化版本（Password01 → Password02）</li>
+                  <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">−</span>無 MFA、無外洩監控、無異常登入偵測</li>
+                  <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">−</span>業者操作體驗差，提高 reset 工單量</li>
+                </ul>
+              </div>
+              <!-- 建議 -->
+              <div class="bg-white rounded-lg p-3 border border-emerald-200">
+                <p class="text-[11px] font-semibold text-emerald-700 mb-2">✓ 建議（NIST 800-63B 對齊）</p>
+                <ul class="text-[11px] text-tfda-navy/70 space-y-1 leading-relaxed">
+                  <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>取消強制 90 天變更（除非有外洩證據）</li>
+                  <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>強制 MFA（TOTP／FIDO2／WebAuthn）</li>
+                  <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>密碼外洩監控（接 Have I Been Pwned API）</li>
+                  <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>異常登入偵測（地理位置、裝置指紋）</li>
+                  <li class="flex gap-2"><span class="text-tfda-green flex-shrink-0">+</span>弱密碼字典阻擋（最低 12 字元、字典過濾）</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 國際依據 -->
+            <div class="bg-white rounded-lg p-3 border border-violet-200 mb-3">
+              <p class="text-[10px] font-semibold text-violet-700 mb-1.5">🌏 國際資安標準依據</p>
+              <ul class="text-[10px] text-tfda-navy/70 space-y-1 leading-relaxed">
+                <li><span class="font-semibold">NIST SP 800-63B（2017 修訂、2024 最新版）：</span>明確不建議強制定期密碼變更，僅在外洩證據存在時要求重設</li>
+                <li><span class="font-semibold">Microsoft Security Baseline（2019 起）：</span>移除 60-day password expiration policy</li>
+                <li><span class="font-semibold">NCSC（英國國家網路安全中心）／CISA（美國）：</span>同樣立場——強制輪替反而降低安全</li>
+                <li><span class="font-semibold">Google、AWS、Apple：</span>全面取消強制密碼變更，改採 MFA + 風險導向認證</li>
+              </ul>
+            </div>
+
+            <!-- 規格書建議文字 -->
+            <div class="bg-tfda-teal/5 rounded-lg p-3 border-l-4 border-tfda-teal">
+              <p class="text-[10px] uppercase tracking-wide text-tfda-teal-dark font-semibold mb-1.5">給規格書的具體建議文字</p>
+              <p class="text-[11px] text-tfda-navy/80 leading-relaxed font-mono bg-white/60 p-2.5 rounded border border-tfda-teal/20">
+                「使用者密碼政策應參照 NIST SP 800-63B：<br>
+                取消強制定期變更要求；<br>
+                改強制啟用多因素驗證（MFA）；<br>
+                密碼長度下限 12 字元、阻擋常見弱密碼字典；<br>
+                偵測外洩或異常登入時觸發強制重設。」
+              </p>
+            </div>
           </div>
 
         </article>
