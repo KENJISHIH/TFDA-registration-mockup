@@ -1195,8 +1195,8 @@
           <div class="flex items-start gap-4 mb-6">
             <span class="badge bg-tfda-orange text-white text-sm px-4 py-1.5">#15</span>
             <div>
-              <h3 class="font-heading text-xl font-bold text-tfda-navy">成分資料品質：紅字辨識與變更彈性</h3>
-              <p class="text-tfda-navy/60 mt-1">區分「禁用」vs「未更新」紅字、原料名稱變更不鎖死——杜絕業者文件來回與規費浮收</p>
+              <h3 class="font-heading text-xl font-bold text-tfda-navy">資料品質與變更彈性：紅字辨識、原料與公司更名不鎖死</h3>
+              <p class="text-tfda-navy/60 mt-1">區分「禁用」vs「未更新」紅字、原料名稱變更不鎖死、公司更名全表自動同步——杜絕業者文件來回、逐筆手改與規費浮收</p>
             </div>
           </div>
 
@@ -1281,13 +1281,54 @@
             </div>
           </div>
 
+          <!-- 子題 C：公司名稱變更全表同步（公司層級永久 ID） -->
+          <div class="mt-6">
+            <p class="text-sm font-heading font-bold text-tfda-navy mb-3">子題 C · 公司名稱變更：全表自動同步商業司資料</p>
+            <div class="grid lg:grid-cols-2 gap-6">
+
+              <!-- BEFORE -->
+              <div class="bg-white rounded-lg p-3 border border-red-100">
+                <p class="text-xs font-semibold text-red-600 mb-2">⚠ BEFORE — 上下半部不連動</p>
+                <div class="bg-gray-50 rounded p-2 text-xs leading-relaxed space-y-1.5">
+                  <div class="bg-white rounded border border-gray-200 p-2">
+                    <p class="text-[9px] text-tfda-navy/50">頁面上半部 · 公司名稱（沿用舊資料，不自動更新）</p>
+                    <p class="font-mono text-[11px] text-red-600">○○生技股份有限公司（舊名）</p>
+                  </div>
+                  <div class="bg-white rounded border border-gray-200 p-2">
+                    <p class="text-[9px] text-tfda-navy/50">頁面下半部 · 自動帶入經濟部商業司</p>
+                    <p class="font-mono text-[11px] text-tfda-green">○○國際生醫股份有限公司（新名）✓</p>
+                  </div>
+                  <p class="text-[10px] text-red-700 bg-red-50 rounded p-1.5">同一頁兩個名稱不一致 → 該公司<span class="font-bold">所有已登錄產品須逐筆手動改名</span>，費時且易生人為輸入落差</p>
+                </div>
+              </div>
+
+              <!-- AFTER -->
+              <div class="bg-white rounded-lg p-3 border border-emerald-100">
+                <p class="text-xs font-semibold text-tfda-green mb-2">✓ AFTER — 統編為公司主鍵，全表一次連動</p>
+                <div class="bg-emerald-50/40 rounded p-2 text-xs leading-relaxed">
+                  <div class="bg-white rounded border border-emerald-200 p-2 mb-2 text-[11px] font-mono">
+                    <p class="text-tfda-navy/60 text-[9px]">公司層級永久主鍵</p>
+                    <p class="text-tfda-teal-dark font-bold">統一編號（固定）</p>
+                  </div>
+                  <p class="text-[10px] text-tfda-navy/70 mb-1">偵測商業司名稱異動 → 全站該公司資料同步：</p>
+                  <div class="space-y-0.5 text-[10px] font-mono">
+                    <p class="text-tfda-navy/40 line-through">v1: ○○生技股份有限公司</p>
+                    <p class="text-tfda-green">v2: ○○國際生醫股份有限公司 ✓（上下半部、所有產品一致）</p>
+                  </div>
+                  <p class="text-[10px] text-emerald-700 mt-2">以統編為單一真實來源——<span class="font-semibold">名稱可變更、主鍵永久不變，業者免逐筆手改</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- 法源與架構支撐 -->
           <div class="mt-6 bg-tfda-navy/5 rounded-lg p-3 border-l-4 border-tfda-navy">
             <p class="text-xs text-tfda-navy/70 leading-relaxed">
               <span class="font-semibold">法源：</span>登錄辦法第 4 條第 2 項「應以中文、英文、號碼或國際通用符號為之」（CAS／INCI 為國際通用符號）；同辦法第 7 條區分「變更登錄 vs 重新登錄」。<br>
               <span class="font-semibold">架構支撐：</span>對應本提案 D 章
-              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-1 永久 ID</a>（屬性變更不換號）／
+              <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-1 永久 ID</a>（屬性變更不換號；公司以統編、成分以 CAS／INCI 為永久主鍵）／
               <a href="#section-d" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">D-2 欄位 Schema</a>（資料字典分流：禁用 vs 未更新）。
+              其中子題 C「公司更名全表同步」即為「<span class="font-semibold">單一真實來源（商業司統編）</span>」原則之具體落地——系統下半部已能自動帶入商業司資料，上半部與既有登錄資料亦應一併連動。
               呼應
               <a href="#mockup-1" class="text-tfda-teal hover:text-tfda-teal-dark underline font-semibold">A 章 #1 全成分登錄優化（主題 A 資料品質）</a>。
             </p>
